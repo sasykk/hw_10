@@ -1,0 +1,45 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<div>
+    <h2>Add new author</h2>
+</div>
+
+<form action="{% url 'quotes:add_author' %}" method="post">
+    {% csrf_token %}
+    <div class="row" bis_skin_checked="1">
+        <div class="form-group col-xs-3" bis_skin_checked="1">
+            <label for="id_fullname">Author`s name:</label>
+            <input type="text" class="form-control" id="id_fullname" name="fullname">
+        </div>
+    </div>
+
+    <div class="row" bis_skin_checked="1">
+        <div class="form-group col-xs-3" bis_skin_checked="1">
+            <label for="id_born_date">Date of birth:</label>
+            <input type="text" class="form-control" id="id_born_date" name="born_date">
+        </div>
+    </div>
+
+    <div class="row" bis_skin_checked="1">
+        <div class="form-group col-xs-3" bis_skin_checked="1">
+            <label for="id_born_location">City of birth:</label>
+            <input type="text" class="form-control" id="id_born_location" name="born_location">
+        </div>
+    </div>
+
+    <div class="row" bis_skin_checked="1">
+        <div class="form-group col-xs-3" bis_skin_checked="1">
+            <label for="id_description">Description:</label>
+            <textarea class="form-control" id="id_description" name="description"></textarea>
+        </div>
+    </div>
+
+    <input type="submit" value="Add" class="btn btn-primary">
+
+</form>
+
+{% endblock %}
